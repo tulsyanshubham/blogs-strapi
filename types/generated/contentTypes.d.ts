@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   collectionName: 'blogs';
   info: {
+    description: '';
     displayName: 'Blog';
     pluralName: 'blogs';
     singularName: 'blog';
@@ -384,7 +385,25 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     avatar: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<true>;
-    content: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    blog_page_data: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          licenseKey: 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NjYyNzUxOTksImp0aSI6IjFkM2IzYTU0LTJlMTQtNDk2Mi05YTIzLTgyMGFjMzk2ODI0OCIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCJdLCJ2YyI6IjAwMjIyYjgwIn0.Il9Ur6xM6a_nCvXZjOMexql1Utjw40GV8XLsEIjtLNLoPMttd5GAzgMhk79RKBnhlCYTAvO4fRcMY7PD3TIXHA';
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    content: Schema.Attribute.RichText &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          licenseKey: 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NjYyNzUxOTksImp0aSI6IjFkM2IzYTU0LTJlMTQtNDk2Mi05YTIzLTgyMGFjMzk2ODI0OCIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCJdLCJ2YyI6IjAwMjIyYjgwIn0.Il9Ur6xM6a_nCvXZjOMexql1Utjw40GV8XLsEIjtLNLoPMttd5GAzgMhk79RKBnhlCYTAvO4fRcMY7PD3TIXHA';
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
