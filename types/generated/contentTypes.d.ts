@@ -382,7 +382,6 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
   attributes: {
     author_name: Schema.Attribute.String & Schema.Attribute.Required;
-    author_profile_url: Schema.Attribute.String;
     avatar: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<true>;
@@ -414,9 +413,6 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
