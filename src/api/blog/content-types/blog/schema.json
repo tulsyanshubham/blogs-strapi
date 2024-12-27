@@ -4,7 +4,8 @@
   "info": {
     "singularName": "blog",
     "pluralName": "blogs",
-    "displayName": "Blog"
+    "displayName": "Blog",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -32,9 +33,33 @@
       "type": "string",
       "required": true
     },
+    "blog_page_data": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "licenseKey": "eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NjYyNzUxOTksImp0aSI6IjFkM2IzYTU0LTJlMTQtNDk2Mi05YTIzLTgyMGFjMzk2ODI0OCIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCJdLCJ2YyI6IjAwMjIyYjgwIn0.Il9Ur6xM6a_nCvXZjOMexql1Utjw40GV8XLsEIjtLNLoPMttd5GAzgMhk79RKBnhlCYTAvO4fRcMY7PD3TIXHA",
+        "preset": "rich"
+      },
+      "required": false,
+      "customField": "plugin::ckeditor.CKEditor"
+    },
     "content": {
-      "type": "blocks",
-      "required": true
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "licenseKey": "eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NjYyNzUxOTksImp0aSI6IjFkM2IzYTU0LTJlMTQtNDk2Mi05YTIzLTgyMGFjMzk2ODI0OCIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCJdLCJ2YyI6IjAwMjIyYjgwIn0.Il9Ur6xM6a_nCvXZjOMexql1Utjw40GV8XLsEIjtLNLoPMttd5GAzgMhk79RKBnhlCYTAvO4fRcMY7PD3TIXHA",
+        "preset": "rich"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "author_profile_url": {
+      "type": "string"
     }
   }
 }
