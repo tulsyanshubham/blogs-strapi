@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+    postgres:
+        container_name: strapiBlogs
+        image: postgres
+        restart: always
+        environment:
+          - POSTGRES_USER=postgres
+          - POSTGRES_DB=blogsdb
+          - POSTGRES_PASSWORD=abcd1234
+        logging:
+          options:
+            max-size: 10m
+            max-file: "3"
+        ports:
+          - '8002:5432'
+        volumes: 
+          - ./migration/:/migration/
