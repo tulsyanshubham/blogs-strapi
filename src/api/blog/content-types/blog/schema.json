@@ -52,6 +52,14 @@
       },
       "required": true,
       "customField": "plugin::ckeditor.CKEditor"
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "author_profile_url": {
+      "type": "string"
     }
   }
 }
